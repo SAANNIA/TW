@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Înregistrare</title>
+    <link rel="stylesheet" href="../CSS/register_style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card">
+        <h1>Înregistrează-te</h1>
+
+        <form class="register-form" action="#" method="post" enctype="multipart/form-data">
+          <div class="row">
+            <label for="username">Nume utilizator</label>
+            <input id="username" name="username" type="text" placeholder="ex: ioanaTW" required />
+          </div>
+
+          <div class="row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="ex: ioana@example.com" required />
+          </div>
+
+          <div class="row two-col">
+            <div>
+              <label for="password">Parolă</label>
+              <input id="password" name="password" type="password" placeholder="Introdu parola" required />
+            </div>
+            <div>
+              <label for="confirm_password">Confirmă parola</label>
+              <input id="confirm_password" name="confirm_password" type="password" placeholder="Repetă parola" required />
+            </div>
+          </div>
+
+          <div class="row two-col">
+            <div>
+              <label for="birthdate">Data nașterii</label>
+              <input id="birthdate" name="birthdate" type="date" required />
+            </div>
+            <div>
+              <label for="country">Țară</label>
+              <select id="country" name="country" required>
+                <option value="" selected disabled>Selectează țara</option>
+                <option>România</option>
+                <option>Franța</option>
+                <option>Germania</option>
+                <option>Italia</option>
+                <option>Spania</option>
+                <option>Polonia</option>
+                <option>Portugalia</option>
+                <option>Statele Unite</option>
+                <option>Canada</option>
+                <option>Alte</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <label>Gen</label>
+            <div class="radio-row">
+              <label><input type="radio" name="gender" value="male" /> Masculin</label>
+              <label><input type="radio" name="gender" value="female" /> Feminin</label>
+              <label><input type="radio" name="gender" value="other" /> Altul</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <label>Interese</label>
+            <div class="checkbox-grid">
+              <label><input type="checkbox" name="interest" value="frontend" /> Frontend</label>
+              <label><input type="checkbox" name="interest" value="backend" /> Backend</label>
+              <label><input type="checkbox" name="interest" value="ux" /> UX/UI</label>
+              <label><input type="checkbox" name="interest" value="ai" /> AI</label>
+              <label><input type="checkbox" name="interest" value="cyber" /> Cybersecurity</label>
+              <label><input type="checkbox" name="interest" value="cloud" /> Cloud</label>
+              <label><input type="checkbox" name="interest" value="mobile" /> Mobile</label>
+              <label><input type="checkbox" name="interest" value="game" /> Game Dev</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <label for="profile_picture">Fotografie de profil</label>
+            <input id="profile_picture" name="profile_picture" type="file" accept="image/*" />
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn primary">Creează cont</button>
+            <button type="reset" class="btn ghost">Resetează</button>
+          </div>
+
+          <p class="login-link">
+            Ai deja cont?
+            <a href="login.html">Mergi la login</a>
+          </p>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
