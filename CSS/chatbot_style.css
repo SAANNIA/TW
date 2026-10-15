@@ -15,6 +15,24 @@ body {
   color: #e9f3ff;
 }
 
+.chat-nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 600px;
+  width: 90%;
+  margin-bottom: 12px;
+}
+
+.chat-nav a {
+  color: #f3c868;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.chat-nav a:hover {
+  text-decoration: underline;
+}
+
 .chat-container {
   max-width: 600px;
   width: 90%;
