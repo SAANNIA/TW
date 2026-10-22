@@ -8,9 +8,7 @@ loginForm.addEventListener("submit", function (e) {
   const email = emailInput.value.trim();
   const password = passwordInput.value;
 
-  // prenume.nume + 2 cifre opționale + @e-uvt.ro (ex: ion.popescu23@e-uvt.ro)
   const emailRegex = /^[a-z]+\.[a-z]+(\d{2})?@e-uvt\.ro$/i;
-  // minim 7 caractere: literă mică, literă mare, cifră și caracter special
   const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{7,}$/;
 
   if (!emailRegex.test(email)) {
