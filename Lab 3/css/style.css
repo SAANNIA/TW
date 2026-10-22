@@ -1,13 +1,79 @@
-/* ===== Pasul 1: selectori și declarații concurente ===== */
-
-/* Regula 1 */
 .important {
   color: blue;
   font-size: 1.25rem;
   padding: 1rem;
 }
 
-/* Regula 2: același selector, altă culoare */
 .important {
   color: crimson;
+}
+
+.card {
+  width: 300px;
+  padding: 20px;
+  border: 5px solid #333;
+  margin-bottom: 1rem;
+  background-color: #f0f4f8;
+}
+
+.card-a {
+  box-sizing: content-box;
+}
+
+.card-b {
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem;
+  background-color: #1d2a36;
+}
+
+.brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f3c868;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #e9f3ff;
+  text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  text-decoration: underline;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 1rem;
+  max-width: 1000px;
+}
+
+.gallery-card {
+  padding: 1rem;
+  border: 1px solid #ccd6e0;
+  border-radius: 8px;
+  background-color: #f0f4f8;
+}
+
+.gallery-card h3 {
+  margin-top: 0;
 }
