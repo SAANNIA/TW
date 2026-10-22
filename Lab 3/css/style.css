@@ -1,0 +1,13 @@
+/* ===== Pasul 1: selectori și declarații concurente ===== */
+
+/* Regula 1 */
+.important {
+  color: blue;
+  font-size: 1.25rem;
+  padding: 1rem;
+}
+
+/* Regula 2: același selector, altă culoare */
+.important {
+  color: crimson;
+}
