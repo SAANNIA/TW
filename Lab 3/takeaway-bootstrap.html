@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workshopuri TW 2026 – Bootstrap</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-light">
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Navigare principală">
+        <div class="container">
+          <a class="navbar-brand fw-bold text-warning" href="#despre">Workshopuri TW</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#meniu"
+            aria-controls="meniu"
+            aria-expanded="false"
+            aria-label="Deschide meniul"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="meniu">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="#despre">Despre</a></li>
+              <li class="nav-item"><a class="nav-link" href="#workshopuri">Workshopuri</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container py-4">
+      <section id="despre" class="row g-3 align-items-center mb-4">
+        <div class="col-12 col-md-8">
+          <h1>Workshopuri de Tehnologii Web 2026</h1>
+          <p class="lead">
+            Sesiuni practice de două ore pentru studenții Facultății de
+            Informatică: de la primul fișier HTML până la publicarea unei
+            aplicații complete.
+          </p>
+        </div>
+        <aside class="col-12 col-md-4" aria-label="Pe scurt">
+          <div class="p-3 bg-white border-start border-4 border-warning">
+            <p class="mb-1"><strong>6</strong> workshopuri</p>
+            <p class="mb-1"><strong>20</strong> locuri / sesiune</p>
+            <p class="mb-0">Participare <strong>gratuită</strong></p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="workshopuri">
+        <h2 class="mb-3">Workshopuri</h2>
+        <div class="row g-3">
+          <div class="col-12 col-sm-6 col-lg-4">
+            <article class="card h-100">
+              <div class="card-body">
+                <h3 class="card-title h5">HTML semantic</h3>
+                <p class="card-subtitle mb-2 text-body-secondary"><time datetime="2026-11-04">4 noiembrie 2026</time></p>
+                <p class="card-text">Structurarea corectă a paginilor și formulare accesibile.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4">
+            <article class="card h-100">
+              <div class="card-body">
+                <h3 class="card-title h5">CSS modern</h3>
+                <p class="card-subtitle mb-2 text-body-secondary"><time datetime="2026-11-11">11 noiembrie 2026</time></p>
+                <p class="card-text">Box Model, Flexbox și Grid pe exemple reale.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4">
+            <article class="card h-100">
+              <div class="card-body">
+                <h3 class="card-title h5">Design responsive</h3>
+                <p class="card-subtitle mb-2 text-body-secondary"><time datetime="2026-11-18">18 noiembrie 2026</time></p>
+                <p class="card-text">Mobile-first, media queries și Bootstrap 5.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4">
+            <article class="card h-100">
+              <div class="card-body">
+                <h3 class="card-title h5">JavaScript și DOM</h3>
+                <p class="card-subtitle mb-2 text-body-secondary"><time datetime="2026-11-25">25 noiembrie 2026</time></p>
+                <p class="card-text">Evenimente, validarea formularelor și Fetch API.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4">
+            <article class="card h-100">
+              <div class="card-body">
+                <h3 class="card-title h5">API-uri REST</h3>
+                <p class="card-subtitle mb-2 text-body-secondary"><time datetime="2026-12-02">2 decembrie 2026</time></p>
+                <p class="card-text">Metode HTTP, JSON și testarea endpoint-urilor.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4">
+            <article class="card h-100">
+              <div class="card-body">
+                <h3 class="card-title h5">Securitate web</h3>
+                <p class="card-subtitle mb-2 text-body-secondary"><time datetime="2026-12-09">9 decembrie 2026</time></p>
+                <p class="card-text">Autentificare, roluri și protecția împotriva XSS.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="bg-dark text-light text-center py-3">
+      <p class="mb-1">Contact: Facultatea de Informatică, Universitatea de Vest din Timișoara</p>
+      <p class="mb-0"><a class="link-warning" href="takeaway.html">Vezi varianta fără Bootstrap</a></p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
