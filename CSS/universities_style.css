@@ -6,6 +6,25 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.page-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #334155;
+}
+
+.page-nav a {
+  color: #a7f3d0;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.page-nav a:hover,
+.page-nav a:focus-visible {
+  text-decoration: underline;
+}
+
 label {
   display: block;
   margin-bottom: 4px;
