@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content="2; url=home.html" />
+    {% load static %}
+    <meta http-equiv="refresh" content="2; url={% url 'home' %}" />
     <title>Se încarcă</title>
-    <link rel="stylesheet" href="../CSS/loading_style.css" />
+    <link rel="stylesheet" href="{% static 'CSS/loading_style.css' %}" />
   </head>
   <body>
     <main class="loading-screen">
