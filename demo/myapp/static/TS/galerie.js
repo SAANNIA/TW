@@ -1,13 +1,9 @@
 "use strict";
-const images = [
-    "../MEDIA/g1.jpg",
-    "../MEDIA/g2.jpg",
-    "../MEDIA/g3.jpg",
-    "../MEDIA/g4.jpg",
-];
 const mainImage = document.getElementById("carousel-image");
 if (!mainImage)
     throw new Error("Elementul #carousel-image nu a fost găsit în pagină.");
+const mediaUrl = mainImage.dataset.mediaUrl ?? "../MEDIA/";
+const images = ["g1.jpg", "g2.jpg", "g3.jpg", "g4.jpg"].map((name) => mediaUrl + name);
 let currentIndex = 0;
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const fadeDuration = reduceMotion ? 0 : 400;

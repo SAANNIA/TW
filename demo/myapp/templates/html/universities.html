@@ -4,14 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Universități din România</title>
-    <link rel="stylesheet" href="../CSS/universities_style.css" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/universities_style.css' %}" />
   </head>
   <body>
     <nav class="page-nav" aria-label="Navigare">
-      <a href="home.html">&larr; Acasă</a>
-      <a href="chatbot.html">ChatBot</a>
-      <a href="galerie.html">Galerie</a>
-      <a href="login.html">Login</a>
+      <a href="{% url 'home' %}">&larr; Acasă</a>
+      <a href="{% url 'chatbot' %}">ChatBot</a>
+      <a href="{% url 'galerie' %}">Galerie</a>
+      <a href="{% url 'login' %}">Login</a>
     </nav>
 
     <div>
@@ -35,6 +36,6 @@
       </table>
     </div>
 
-    <script src="../JS/universities_js.js"></script>
+    <script src="{% static 'JS/universities_js.js' %}"></script>
   </body>
 </html>

@@ -4,26 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Galerie</title>
-    <link rel="stylesheet" href="../CSS/galerie.css" />
-    <link rel="stylesheet" href="../CSS/cursor.css" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/galerie.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/cursor.css' %}" />
   </head>
   <body>
     <nav class="page-nav" aria-label="Navigare">
-      <a href="home.html">&larr; Acasă</a>
-      <a href="universities.html">Universități</a>
-      <a href="chatbot.html">ChatBot</a>
-      <a href="login.html">Login</a>
+      <a href="{% url 'home' %}">&larr; Acasă</a>
+      <a href="{% url 'universities' %}">Universități</a>
+      <a href="{% url 'chatbot' %}">ChatBot</a>
+      <a href="{% url 'login' %}">Login</a>
     </nav>
 
     <h1>Galerie foto</h1>
 
     <div class="carousel-container">
       <div class="carousel-view">
-        <img id="carousel-image" src="../MEDIA/g1.jpg" alt="Imagine din galerie" />
+        <img
+          id="carousel-image"
+          src="{% static 'MEDIA/g1.jpg' %}"
+          data-media-url="{% static 'MEDIA/' %}"
+          alt="Imagine din galerie"
+        />
       </div>
     </div>
 
-    <script src="../TS/galerie.js"></script>
-    <script src="../TS/cursor.js"></script>
+    <script src="{% static 'TS/galerie.js' %}"></script>
+    <script src="{% static 'TS/cursor.js' %}"></script>
   </body>
 </html>
