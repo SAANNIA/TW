@@ -22,5 +22,5 @@ loginForm.addEventListener("submit", function (e) {
   }
 
   alert("Login reușit!");
-  window.location.href = "loading.html";
+  window.location.href = loginForm.dataset.successUrl;
 });

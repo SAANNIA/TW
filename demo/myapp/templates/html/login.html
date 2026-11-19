@@ -4,14 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="../CSS/login_style.css" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/login_style.css' %}" />
   </head>
   <body>
     <main class="login-page">
       <section class="login-card">
         <h1>Autentificare</h1>
 
-        <form id="loginForm" class="login-form">
+        <form id="loginForm" class="login-form" data-success-url="{% url 'loadingscreen' %}">
           <div class="field">
             <label for="email">Email</label>
             <input id="email" type="email" placeholder="nume@exemplu.com" required />
@@ -26,16 +27,16 @@
 
           <p class="helper-text">
             Nu ai cont?
-            <a href="register.html">Creează unul acum</a>
+            <a href="{% url 'register' %}">Creează unul acum</a>
           </p>
 
           <p class="helper-text">
-            <a href="home.html">&larr; Înapoi la pagina principală</a>
+            <a href="{% url 'home' %}">&larr; Înapoi la pagina principală</a>
           </p>
         </form>
       </section>
     </main>
 
-    <script src="../JS/login_js.js"></script>
+    <script src="{% static 'JS/login_js.js' %}"></script>
   </body>
 </html>
