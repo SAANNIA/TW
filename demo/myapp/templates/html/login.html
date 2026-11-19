@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../CSS/login_style.css" />
+  </head>
+  <body>
+    <main class="login-page">
+      <section class="login-card">
+        <h1>Autentificare</h1>
+
+        <form id="loginForm" class="login-form">
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="nume@exemplu.com" required />
+          </div>
+
+          <div class="field">
+            <label for="password">Parolă</label>
+            <input id="password" type="password" placeholder="Introdu parola" required />
+          </div>
+
+          <button type="submit" class="btn primary">Autentificare</button>
+
+          <p class="helper-text">
+            Nu ai cont?
+            <a href="register.html">Creează unul acum</a>
+          </p>
+
+          <p class="helper-text">
+            <a href="home.html">&larr; Înapoi la pagina principală</a>
+          </p>
+        </form>
+      </section>
+    </main>
+
+    <script src="../JS/login_js.js"></script>
+  </body>
+</html>
