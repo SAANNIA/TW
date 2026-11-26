@@ -40,6 +40,7 @@ async function getJSON<T>(url: string): Promise<T> {
   
 const statusEl = document.getElementById("status") as HTMLParagraphElement;
 const resultsEl = document.getElementById("results") as HTMLDivElement;
+let shownBooks: Book[] = [];
 
 function setStatus(text: string): void {
   statusEl.textContent = text;
@@ -75,6 +76,7 @@ function createCard(book: Book): HTMLElement {
 }
 
 function render(books: Book[]): void {
+  shownBooks = books;
   resultsEl.innerHTML = "";
 
   if (books.length === 0) {
@@ -133,3 +135,36 @@ window.addEventListener("DOMContentLoaded", () => {
       search();
     }
   });
+
+  
+function csvCell(value: string): string {
+    const safe = /^[=+\-@]/.test(value) ? `'${value}` : value;
+    return `"${safe.replace(/"/g, '""')}"`;
+  }
+  
+  function exportCSV(books: Book[]): void {
+    if (books.length === 0) {
+      setStatus("Nu există rezultate de exportat.");
+      return;
+    }
+  
+    const header = ["Titlu", "Autori", "An"];
+    const rows = books.map((book) => [
+      book.title,
+      book.author_name ? book.author_name.join("; ") : "",
+      book.first_publish_year !== undefined ? String(book.first_publish_year) : "",
+    ]);
+  
+    const csv = [header, ...rows].map((row) => row.map(csvCell).join(",")).join("\r\n");
+    const blob = new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+  
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "carti.csv";
+    link.click();
+    URL.revokeObjectURL(url);
+  }
+  
+  const exportBtn = document.getElementById("exportBtn") as HTMLButtonElement;
+  exportBtn.addEventListener("click", () => exportCSV(shownBooks));

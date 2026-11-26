@@ -23,6 +23,7 @@ async function getJSON(url) {
 }
 const statusEl = document.getElementById("status");
 const resultsEl = document.getElementById("results");
+let shownBooks = [];
 function setStatus(text) {
     statusEl.textContent = text;
 }
@@ -50,6 +51,7 @@ function createCard(book) {
     return card;
 }
 function render(books) {
+    shownBooks = books;
     resultsEl.innerHTML = "";
     if (books.length === 0) {
         setStatus("No results found.");
@@ -99,3 +101,29 @@ window.addEventListener("DOMContentLoaded", () => {
         search();
     }
 });
+function csvCell(value) {
+    const safe = /^[=+\-@]/.test(value) ? `'${value}` : value;
+    return `"${safe.replace(/"/g, '""')}"`;
+}
+function exportCSV(books) {
+    if (books.length === 0) {
+        setStatus("Nu există rezultate de exportat.");
+        return;
+    }
+    const header = ["Titlu", "Autori", "An"];
+    const rows = books.map((book) => [
+        book.title,
+        book.author_name ? book.author_name.join("; ") : "",
+        book.first_publish_year !== undefined ? String(book.first_publish_year) : "",
+    ]);
+    const csv = [header, ...rows].map((row) => row.map(csvCell).join(",")).join("\r\n");
+    const blob = new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "carti.csv";
+    link.click();
+    URL.revokeObjectURL(url);
+}
+const exportBtn = document.getElementById("exportBtn");
+exportBtn.addEventListener("click", () => exportCSV(shownBooks));
