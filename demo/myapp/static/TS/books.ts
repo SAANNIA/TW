@@ -85,3 +85,51 @@ function render(books: Book[]): void {
   books.forEach((book) => resultsEl.appendChild(createCard(book)));
   setStatus(`Loaded ${books.length} result(s).`);
 }
+
+
+const searchForm = document.getElementById("searchForm") as HTMLFormElement;
+const queryInput = document.getElementById("queryInput") as HTMLInputElement;
+const searchBtn = document.getElementById("searchBtn") as HTMLButtonElement;
+
+function buildURL(query: string): string {
+  const BASE_URL = "https://openlibrary.org/search.json";
+  return `${BASE_URL}?q=${encodeURIComponent(query)}&limit=12`;
+}
+
+async function search(): Promise<void> {
+  const query = queryInput.value.trim();
+  if (!query) {
+    setStatus("Please enter a search term.");
+    return;
+  }
+
+  searchBtn.disabled = true;
+  setStatus("Loading...");
+  resultsEl.innerHTML = "";
+
+  try {
+    const data = await getJSON<BookSearchResponse>(buildURL(query));
+    const books: Book[] = data.docs;
+    render(books);
+    localStorage.setItem("lastQuery", query);
+  } catch (err: unknown) {
+    const msg = err instanceof Error ? err.message : "Unknown error";
+    setStatus(`Load failed: ${msg}`);
+  } finally {
+    searchBtn.disabled = false;
+  }
+}
+
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  search();
+}); 
+
+
+window.addEventListener("DOMContentLoaded", () => {
+    const lastQuery = localStorage.getItem("lastQuery");
+    if (lastQuery) {
+      queryInput.value = lastQuery;
+      search();
+    }
+  });
