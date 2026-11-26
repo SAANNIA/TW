@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/books_style.css' %}" />
+    <title>Biblioteca comunității</title>
+  </head>
+  <body>
+    <header>
+      <nav aria-label="Navigare principală">
+        <ul>
+          <li><a href="{% url 'home' %}">Acasă</a></li>
+          <li><a href="{% url 'universities' %}">Universități</a></li>
+          <li><a href="{% url 'chatbot' %}">ChatBot</a></li>
+          <li><a href="{% url 'galerie' %}">Galerie</a></li>
+          <li><a href="{% url 'books' %}">Cărți</a></li>
+          <li><a href="{% url 'register' %}">Înregistrare</a></li>
+          <li><a href="{% url 'login' %}">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Biblioteca comunității</h1>
+
+      <form id="searchForm">
+        <label for="queryInput" class="visually-hidden">Caută o carte</label>
+        <input id="queryInput" type="text" placeholder="Caută o carte (ex: javascript)..." />
+        <button id="searchBtn" type="submit">Caută</button>
+      </form>
+
+      <p id="status" aria-live="polite"></p>
+
+      <div id="results"></div>
+    </main>
+
+    <footer>
+      <p>Date oferite de Open Library (openlibrary.org)</p>
+    </footer>
+
+    <script src="{% static 'JS/books.js' %}"></script>
+  </body>
+</html>
